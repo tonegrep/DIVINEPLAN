@@ -3,6 +3,17 @@
 /*implement some recursive function to iterate through the whole 
 directory and search for the source files (only headers in C++ case)*/
 
+void PrintFiles(std::vector<path> trackedfiles, std::vector<path> updatedfiles) {
+    std::cout << "Tracked: \n";
+    for (std::vector<path>::iterator it = trackedfiles.begin(); it != trackedfiles.end(); ++it) {
+        std::cout << *it << "  ";
+    }
+    std::cout << "Updated: \n";
+    for (std::vector<path>::iterator it1 = updatedfiles.begin(); it1 != updatedfiles.end(); ++it1) {
+        std::cout << *it1 << "  ";
+    }
+}
+
 FileTracker::FileTracker(std::string pathstr/*god please check if this exists*/) :
     projectpath(path(pathstr)) {
     
@@ -11,21 +22,21 @@ FileTracker::FileTracker(std::string pathstr/*god please check if this exists*/)
 }
 
 int FileTracker::UpdateFiles(path current) {
-
-    if (exists(current))
+    
+    for (auto &p : recursive_directory_iterator(current))
     {
-      if (is_directory(current))
-      {
-        //for (directory_entry& x : directory_iterator(current)) {
-            
-        //}
-          //std::cout << "    " << x.path() << '\n'; 
-      }
-      else
-        std::cout << current << " exists, but is not a regular file or directory\n";
+        if (is_regular_file(p)) {
+            std::vector<path>::iterator it = std::find(trackedfiles.begin(), trackedfiles.end(), p);
+            if (it == trackedfiles.end())
+                updatedfiles.push_back(p);
+            else {
+                if(last_write_time(p) != last_write_time(*it)) {
+                    if(std::find(updatedfiles.begin(), updatedfiles.end(), p) == updatedfiles.end())
+                        updatedfiles.push_back(p);
+                }          
+            }
+        };
     }
-    else
-      std::cout << current << " does not exist\n";
 }
 
 void FileTracker::FlushUpdated() {
