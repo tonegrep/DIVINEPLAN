@@ -1,5 +1,5 @@
 #include "parselogic.h"
 
-int ParseC::Parse() {
-    //file_path.extension()
+int ParseC::Parse(const std::vector<path> & modified) {
+    //check file_path.extension()
 }

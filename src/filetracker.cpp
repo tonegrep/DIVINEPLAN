@@ -14,11 +14,9 @@ void PrintFiles(std::vector<path> trackedfiles, std::vector<path> updatedfiles) 
     }
 }
 
-FileTracker::FileTracker(std::string pathstr/*god please check if this exists*/) :
-    projectpath(path(pathstr)) {
-    
+FileTracker::FileTracker(std::string pathstr/*god please check if this exists*/) {
 
-    UpdateFiles(projectpath);
+    UpdateFiles(pathstr);
 }
 
 int FileTracker::UpdateFiles(path current) {
@@ -44,6 +42,6 @@ void FileTracker::FlushUpdated() {
     updatedfiles.clear();
 }
 
-std::vector<path> FileTracker::GetUpdatedFiles() {
+const std::vector<path> & FileTracker::GetUpdatedFiles() {
     return updatedfiles;
 }

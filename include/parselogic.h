@@ -1,12 +1,18 @@
 #ifndef _PARSELOGIC_H_
 #define _PARSELOGIC_H_
 
+#include <vector>
+#include <experimental/filesystem>
+
+using namespace std::experimental::filesystem;
+
 class ParseLogic {
 private:
 
 
 public:
-    virtual int Parse() = 0; 
+    virtual int Parse(const std::vector<path> & modified) = 0; 
+    virtual ~ParseLogic();
 };
 
 
@@ -15,7 +21,7 @@ private:
 
 
 public:
-    int Parse();
+    int Parse(const std::vector<path> & modified);
 
 };
 
@@ -25,7 +31,7 @@ private:
 
 
 public:
-    int Parse();
+    int Parse(const std::vector<path> & modified);
 };
 
 
