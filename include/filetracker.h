@@ -17,6 +17,8 @@ public:
     int UpdateFiles(path current);
     void FlushUpdated();
     const std::vector<path> & GetUpdatedFiles();
+    std::vector<path> GetUpdatedFiles(std::string extension);
+    
 };
 
 #endif

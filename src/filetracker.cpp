@@ -45,3 +45,12 @@ void FileTracker::FlushUpdated() {
 const std::vector<path> & FileTracker::GetUpdatedFiles() {
     return updatedfiles;
 }
+
+std::vector<path> FileTracker::GetUpdatedFiles(std::string extension) {
+    std::vector<path> out;
+    for (auto &it : updatedfiles) {
+        if (it.extension() != extension)
+            out.push_back(it);
+    }
+    return out;
+}
