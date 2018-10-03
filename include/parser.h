@@ -11,7 +11,7 @@ class Parser {
 private:
     path directory;
     FileTracker * track;
-    ParseLogic * logic;
+    IParseLogic * logic;
 public:
 
     Parser(std::string dir);

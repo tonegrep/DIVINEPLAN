@@ -2,26 +2,30 @@
 #define _DATA_H_
 
 #include <iostream>
-
+#include <list>
 
 class Data {
-private:
+protected:
     std::string name;
-
 public:
 
 
 };
 
+class Variable : public Data {
+private:
+    std::string variable_type;
+
+};
 
 class Func : public Data {
+private:
+    std::list<Variable> params;
+    std::string return_value;
 
 };
 
-class Variable : public Data {
 
-
-};
 
 
 #endif

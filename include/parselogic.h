@@ -6,32 +6,32 @@
 
 using namespace std::experimental::filesystem;
 
-class ParseLogic {
+class IParseLogic {
 private:
 
 
 public:
-    virtual int Parse(const std::vector<path> & modified) = 0; 
-    virtual ~ParseLogic();
+    virtual int Parse(path source) = 0; 
+    virtual ~IParseLogic();
 };
 
 
-class ParseJava : public ParseLogic {
+class IParseJava : public IParseLogic {
 private:
 
 
 public:
-    int Parse(const std::vector<path> & modified);
+    int Parse(path source);
 
 };
 
 
-class ParseC : public ParseLogic {
+class IParseC : public IParseLogic {
 private:
 
 
 public:
-    int Parse(const std::vector<path> & modified);
+    int Parse(path source);
 };
 
 

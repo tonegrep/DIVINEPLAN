@@ -3,13 +3,13 @@
 
 Parser::Parser(std::string dir)  :
     directory(dir) {
-    logic = new ParseC();
+    logic = new IParseC();
     track = new FileTracker(directory);
 }
 
 int Parser::ReadModified() {
     track->UpdateFiles(directory);
-    logic->Parse(track->GetUpdatedFiles());
+    logic->Parse(/*track->GetUpdatedFiles()*/);
     track->FlushUpdated();
     return 0;
 };
