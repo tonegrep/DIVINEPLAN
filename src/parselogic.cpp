@@ -1,5 +1,6 @@
 #include "parselogic.h"
 
-int IParseC::Parse() {
-    
+int IParseC::Parse(path source) {
+    std::ifstream file(source);
+
 }
