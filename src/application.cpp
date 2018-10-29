@@ -1,8 +1,8 @@
 #include "application.h"
 
 Application::Application() {
+    //parser("..");
     is_on = true;
-
 }
 
 int Application::Init() {

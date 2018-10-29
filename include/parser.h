@@ -13,7 +13,7 @@ private:
     FileTracker * track;
     IParseLogic * logic;
 public:
-
+    Parser();
     Parser(std::string dir);
     int ReadModified();
 

@@ -9,7 +9,7 @@ Parser::Parser(std::string dir)  :
 
 int Parser::ReadModified() {
     track->UpdateFiles(directory);
-    logic->Parse(/*track->GetUpdatedFiles()*/);
+    //logic->Parse(/*track->GetUpdatedFiles()*/);
     track->FlushUpdated();
     return 0;
 };

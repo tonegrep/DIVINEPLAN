@@ -7,6 +7,9 @@ class Architecture {
 private:
     std::vector<Data> tracked_data;
 public:
+    int pushData(Data & entry);
+    Data getData(std::string name);
+    
 
 };
 
