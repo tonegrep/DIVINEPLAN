@@ -7,8 +7,6 @@
 class Structure {
 private:
 
-    Graphics graphics;
-
 public:
 
 };

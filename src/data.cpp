@@ -1,13 +1,14 @@
 #include "data.h"
 
-sf::Shape * Class::getBody() {
-return &body;
+sf::CircleShape * Class::GetBody() {
+    return &body;
 } 
 
-sf::Shape * Variable::getBody() {
-return &body;
+sf::RectangleShape * Variable::GetBody() {
+    return &body;
 }
 
-sf::Shape * Func::getBody() {
-return &body;
+sf::CircleShape * Func::GetBody() {
+    return &body;
 } 
+

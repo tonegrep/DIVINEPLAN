@@ -3,11 +3,14 @@
 Application::Application() {
     //parser("..");
     is_on = true;
+    window.create(sf::VideoMode(800, 600), "DIVINEPLAN");
 }
 
 int Application::Init() {
-    while (is_on) {
+    while (window.isOpen()) {
         //Update graphics, check if buttons are pressed & retrieve updates
+        graph.Update(window, arch);
+
     };
-    return 0;
+    return EXIT_SUCCESS;
 }
