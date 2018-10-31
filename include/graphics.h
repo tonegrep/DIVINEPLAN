@@ -15,10 +15,11 @@
 class Graphics {
 private:
     template <class CONTAINER>
-    void DrawItems(CONTAINER * cont);
+    void DrawItems(CONTAINER * cont, 
+    sf::RenderWindow & window);
 public:
     Graphics();
-    void Update(sf::RenderWindow & window,\
+    void Update(sf::RenderWindow & window,
                Architecture & arch);
     
 

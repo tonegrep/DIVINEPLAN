@@ -12,6 +12,8 @@
 
 
 class Data {
+private:
+    sf::CircleShape body;
 protected:
     std::string name;
 public:
