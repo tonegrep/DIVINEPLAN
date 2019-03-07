@@ -7,7 +7,7 @@ Graphics::Graphics() {
 template <class CONTAINER>
 void Graphics::DrawItems(CONTAINER * cont, sf::RenderWindow & window) {
     for(auto& item : *cont) {
-        window.draw(item);
+        window.draw(*item.GetBody());
     }
 }
 

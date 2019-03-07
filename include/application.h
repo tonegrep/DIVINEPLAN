@@ -13,7 +13,7 @@
 class Application {
 
 private:
-    Parser             parser;
+    Parser            *parser;
     Architecture       arch;
     Graphics           graph;
     sf::RenderWindow   window;

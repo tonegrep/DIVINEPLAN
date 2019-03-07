@@ -1,7 +1,7 @@
 #include "application.h"
 
 Application::Application() {
-    //parser("..");
+    parser = new Parser("gumno");
     is_on = true;
     window.create(sf::VideoMode(800, 600), "DIVINEPLAN");
 }

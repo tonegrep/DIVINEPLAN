@@ -2,6 +2,8 @@
 #define _PARSELOGIC_H_
 
 #include <vector>
+#include <fstream>
+#include "architecture.h"
 #include <experimental/filesystem>
 
 using namespace std::experimental::filesystem;
@@ -12,7 +14,7 @@ private:
 
 public:
     virtual int Parse(path source) = 0; 
-    virtual ~IParseLogic();
+    virtual ~IParseLogic() {};
 };
 
 

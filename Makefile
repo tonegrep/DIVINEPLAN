@@ -6,9 +6,9 @@ SRCDIR = $(TOP)/src
 INCDIR = $(TOP)/include
 
 SOURCES = \
-	$(SRCDIR)/main.cpp \
-	$(SRCDIR)/filetracker.cpp
-	#$(wildcard $(SRCDIR)/*.cpp )
+	$(wildcard $(SRCDIR)/*.cpp )
+	#$(SRCDIR)/main.cpp \
+	#$(SRCDIR)/filetracker.cpp
 
 INCLUDES = \
 	-I$(INCDIR)
@@ -16,7 +16,10 @@ INCLUDES = \
 CFLAGS = \
 	-std=c++17 \
 	-lstdc++fs \
-	-lm 
+	-lm \
+	-lsfml-graphics \
+	-lsfml-window \
+	-lsfml-system
 
 all:$(SOURCES)
 	$(GCC) -o $@ $^ $(INCLUDES) $(CFLAGS)

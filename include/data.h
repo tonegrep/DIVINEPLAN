@@ -18,7 +18,14 @@ protected:
     std::string name;
 public:
     virtual sf::Shape * GetBody() = 0;
-    virtual ~Data();
+    virtual ~Data() {};
+};
+
+class Folder : public Data {
+private:
+    sf::RectangleShape body;
+public:
+    sf::RectangleShape * GetBody();
 };
 
 class Class : public Data {

@@ -4,6 +4,7 @@
 #include <experimental/filesystem>
 #include "parselogic.h"
 #include "filetracker.h"
+#include "architecture.h"
 
 using namespace std::experimental::filesystem;
 

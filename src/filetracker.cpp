@@ -39,7 +39,17 @@ int FileTracker::UpdateFiles(path current) {
 
 void FileTracker::FlushUpdated() {
     //TODO: need to check if updated files are already in tracked vector
-    updatedfiles.clear();
+    for (auto &tfile : trackedfiles) {
+        for(std::vector<path>::iterator it = updatedfiles.begin(); it != updatedfiles.end();) {
+            if (tfile == *it) {
+                it = updatedfiles.erase(it);
+            } else {
+                ++it;
+            }
+                
+        }
+
+    }
 }
 
 const std::vector<path> & FileTracker::GetUpdatedFiles() {
