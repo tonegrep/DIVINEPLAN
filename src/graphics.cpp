@@ -7,6 +7,7 @@ Graphics::Graphics() {
 template <class CONTAINER>
 void Graphics::DrawItems(CONTAINER * cont, sf::RenderWindow & window) {
     for(auto& item : *cont) {
+        std::cout << "drew " << item.GetName();
         window.draw(*item.GetBody());
     }
 }

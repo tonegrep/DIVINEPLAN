@@ -16,7 +16,14 @@ private:
 public:
     Parser();
     Parser(std::string dir);
-    int ReadModified();
+    /**
+     * @brief gets new or updated files ready to be drawn
+     * 
+     * @return int 
+     */
+    int ReadModified(Architecture arch);
+
+    int TrackUpdated();
 
 };
 

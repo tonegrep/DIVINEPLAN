@@ -13,7 +13,7 @@ private:
 
 
 public:
-    virtual int Parse(path source) = 0; 
+    virtual int Parse(path source, Architecture & arch) = 0; 
     virtual ~IParseLogic() {};
 };
 
@@ -23,7 +23,7 @@ private:
 
 
 public:
-    int Parse(path source);
+    int Parse(path source, Architecture & arch);
 
 };
 
@@ -33,7 +33,7 @@ private:
 
 
 public:
-    int Parse(path source);
+    int Parse(path source, Architecture & arch);
 };
 
 

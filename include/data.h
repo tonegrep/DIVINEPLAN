@@ -7,9 +7,10 @@
 */
 
 #include <iostream>
-#include <list>
+#include <vector>
 #include <SFML/Graphics.hpp>
 
+//TODO: add vectors for classes
 
 class Data {
 private:
@@ -17,6 +18,8 @@ private:
 protected:
     std::string name;
 public:
+    int SetName(std::string title);
+    std::string GetName();
     virtual sf::Shape * GetBody() = 0;
     virtual ~Data() {};
 };
@@ -28,12 +31,6 @@ public:
     sf::RectangleShape * GetBody();
 };
 
-class Class : public Data {
-private:
-    sf::CircleShape body;
-public:
-    sf::CircleShape * GetBody();
-};
 
 class Variable : public Data {
 private:
@@ -47,10 +44,20 @@ public:
 class Func : public Data {
 private:
     sf::CircleShape body;
-    std::list<Variable> params;
+    std::vector<Variable> params;
     std::string return_value;
 public:
     sf::CircleShape * GetBody();
 };
+
+class Class : public Data {
+private:
+    sf::CircleShape body;
+    std::vector<Variable> vars;
+    std::vector<Func> funcs;
+public:
+    sf::CircleShape * GetBody();
+};
+
 
 #endif

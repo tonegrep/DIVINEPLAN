@@ -21,5 +21,5 @@ CFLAGS = \
 	-lsfml-window \
 	-lsfml-system
 
-all:$(SOURCES)
+divinePlan:$(SOURCES)
 	$(GCC) -o $@ $^ $(INCLUDES) $(CFLAGS)

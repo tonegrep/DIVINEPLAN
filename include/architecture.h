@@ -19,9 +19,9 @@ public:
     std::vector<Class> * GetClasses();
     std::vector<Func> * GetFunctions();
     std::vector<Variable> * GetVariables();
-    int PushClass(Class item);
-    int PushFunction(Func item);
-    int PushVariable(Variable item);
+    int PushClass(Class & item);
+    int PushFunction(Func & item);
+    int PushVariable(Variable & item);
 
 };
 
